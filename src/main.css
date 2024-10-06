@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .hide {
+      display:none
+    }
+    .btnGender{
+       @apply font-medium  w-[120px] block text-center cursor-pointer py-[8px] text-white rounded-md opacity-70;
+    }
+    .containerCentralized{
+        @apply    absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] py-[80px] rounded-[15px];
+      
+    }
+  }
+body{
+    background-color: rgb(226 232 240);
+
+}
