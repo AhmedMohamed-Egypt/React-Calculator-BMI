@@ -1,12 +1,12 @@
 import { UseBodyContext } from "../../Context/BodyContext";
-import { Calcs } from "../../Hooks/Calcs.jsx";
+import { Calcs } from "../../Hooks/CalcsEquations";
 import LeftAligned from "../../UI-Components/LeftAligned";
 
 function Male() {
   const { data } = UseBodyContext();
-  const { calcsData, totalCalories} = Calcs(data);
+  const { calcsData, totalCalories } = Calcs(data);
   const { fats, protien, carbs, leanMass } = calcsData;
-  
+
   return (
     <LeftAligned
       leanmass={leanMass}

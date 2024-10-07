@@ -1,11 +1,11 @@
 import { UseBodyContext } from "../../Context/BodyContext";
-import { Calcs } from "../../Hooks/Calcs.jsx";
+import { Calcs } from "../../Hooks/CalcsEquations.jsx";
 import LeftAligned from "../../UI-Components/LeftAligned";
 
 function Female() {
   const { data } = UseBodyContext();
   const { calcsData, totalCalories } = Calcs(data);
- 
+
   const { fats, protien, carbs, leanMass } = calcsData;
 
   return (
