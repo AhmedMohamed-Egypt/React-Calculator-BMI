@@ -5,13 +5,21 @@ const BodyContext = createContext();
 
 //Create Provider
 const initialState = {
-  data: { gender: "", weight: "", weightUnit: "" },
+  data: { gender: '', weight: '', weightUnit: '' ,activeState:false},
+  
 };
 function reducer(snState, action) {
   switch (action.type) {
     case "update": {
+     
+      const checkActiveState = ((action.payload.gender !='') && (action.payload.weight!='') && (action.payload.weightUnit!='')) ? true:false
       
-      return { ...snState,data:{...snState.data,...action.payload} };
+      if(checkActiveState){
+        return { ...snState,data:{...action.payload,activeState:true} };
+      }else {
+        return { ...snState,data:{...action.payload,activeState:false} };
+      }
+     
     }
     default: {
       throw new Error("Action not known");

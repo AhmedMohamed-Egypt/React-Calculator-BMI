@@ -1,29 +1,23 @@
-import * as React from 'react';
-
-
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-
-import FormControl from '@mui/material/FormControl';
-
-function TextInput({value,onChange,endTitle}) {
+import * as React from "react";
+import TextField from "@mui/material/TextField";
+import InputAdornment from "@mui/material/InputAdornment";
+function TextInput({ value, onChange, endTitle }) {
   return (
-    <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" onChange={onChange} value={value} >
-    <OutlinedInput
-      id="outlined-adornment-weight"
-      endAdornment={<InputAdornment position="end">{endTitle}</InputAdornment>}
-      aria-describedby="outlined-weight-helper-text"
-      inputProps={{
-        'aria-label': 'Weight',
+    <TextField
+      label="Enter your Weight"
+      id="outlined-start-adornment"
+      sx={{ m: 1, width: "25ch" }}
+      value={value}
+      onChange={onChange}
+      slotProps={{
+        input: {
+          endAdornment: (
+            <InputAdornment position="end">{endTitle}</InputAdornment>
+          ),
+        },
       }}
-        label="Weight"
-      variant="outlined"
-      
     />
-   <InputLabel htmlFor="outlined-adornment-password">Weight</InputLabel>
-  </FormControl>
-  )
+  );
 }
 
-export default TextInput
+export default TextInput;

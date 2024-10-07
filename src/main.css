@@ -7,11 +7,14 @@
       display:none
     }
     .btnGender{
-       @apply font-medium  w-[120px] block text-center cursor-pointer py-[8px] text-white rounded-md opacity-70;
+       @apply font-medium  w-[120px] block text-center cursor-pointer py-[8px] text-white rounded-md opacity-50;
     }
     .containerCentralized{
         @apply    absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] py-[80px] rounded-[15px];
       
+    }
+    .calcBtn{
+      @apply text-white font-medium  relative py-[7px] rounded-lg w-[150px] bg-gray-950	text-center;
     }
   }
 body{
