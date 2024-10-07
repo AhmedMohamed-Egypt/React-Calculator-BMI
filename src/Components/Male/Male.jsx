@@ -1,6 +1,7 @@
 import { UseBodyContext } from "../../Context/BodyContext";
-import LeftAligned from "../../UI-Components/LeftAligned";
 import { calcs } from "../../Hooks/Calcs";
+import LeftAligned from "../../UI-Components/LeftAligned";
+
 function Male() {
   const { data } = UseBodyContext();
   const { calcsData, totalCalories} = calcs(data);
