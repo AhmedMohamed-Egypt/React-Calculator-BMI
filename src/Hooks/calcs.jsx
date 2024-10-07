@@ -32,7 +32,7 @@ function calulate(factor, data) {
   return { calcsData, totalCalories, totalPortions ,totalPortionPercentage};
 }
 
-function calcs(data) {
+function Calcs(data) {
   if (data.gender === "female" && data.weightUnit === "Kg") {
     return calulate(factors.kgFemale, data);
   }
@@ -46,4 +46,4 @@ function calcs(data) {
 
 }
 
-export { calcs };
+export { Calcs };

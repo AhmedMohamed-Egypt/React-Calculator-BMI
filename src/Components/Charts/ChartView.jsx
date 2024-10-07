@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { UseBodyContext } from "../../Context/BodyContext";
 import { PieChart, pieArcLabelClasses } from '@mui/x-charts/PieChart';
-import { calcs } from "../../Hooks/Calcs.jsx";
+import { Calcs } from "../../Hooks/Calcs.jsx";
 
 function ChartView() {
     const { data:dataItems } = UseBodyContext();
-const { totalPortionPercentage} = calcs(dataItems);
+const { totalPortionPercentage} = Calcs(dataItems);
 const {percentProtien,percentFat,percentCarbs} = totalPortionPercentage
 console.log(totalPortionPercentage)
 const data = [
