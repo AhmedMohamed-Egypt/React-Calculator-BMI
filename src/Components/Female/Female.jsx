@@ -1,5 +1,5 @@
 import { UseBodyContext } from "../../Context/BodyContext";
-import { calcs } from "../../Hooks/Calcs";
+import { calcs } from "../../Hooks/Calcs.jsx";
 import LeftAligned from "../../UI-Components/LeftAligned";
 
 function Female() {

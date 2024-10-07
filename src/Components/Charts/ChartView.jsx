@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { UseBodyContext } from "../../Context/BodyContext";
 import { PieChart, pieArcLabelClasses } from '@mui/x-charts/PieChart';
-import { calcs } from "../../Hooks/Calcs";
+import { calcs } from "../../Hooks/Calcs.jsx";
 
 function ChartView() {
     const { data:dataItems } = UseBodyContext();
