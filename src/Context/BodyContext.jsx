@@ -1,5 +1,5 @@
 import { data } from "autoprefixer";
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 //Create Context
 const BodyContext = createContext();
 
@@ -32,6 +32,8 @@ function BodyProvider({ children }) {
   function getData(dataPerson){
     dispatch({type:'update',payload:dataPerson})
   }
+
+  
   return <BodyContext.Provider value={{getData,data}}>{children}</BodyContext.Provider>;
 }
 

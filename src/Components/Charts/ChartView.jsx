@@ -1,17 +1,12 @@
 import * as React from "react";
-import { UseBodyContext } from "../../Context/BodyContext";
 import { PieChart, pieArcLabelClasses } from "@mui/x-charts/PieChart";
-import { Calcs } from "../../Hooks/CalcsEquations";
-
-function ChartView() {
-  const { data: dataItems } = UseBodyContext();
-  const { totalPortionPercentage } = Calcs(dataItems);
-  const { percentProtien, percentFat, percentCarbs } = totalPortionPercentage;
-  console.log(totalPortionPercentage);
+function ChartView({proteinVal,fatVal,carbVal}) {
+  
+ 
   const data = [
-    { label: "Protien", value: percentProtien, color: "#0088FE" },
-    { label: "Fat", value: percentFat, color: "#00C49F" },
-    { label: "Carb", value: percentCarbs, color: "#FFBB28" },
+    { label: "Protien", value: proteinVal, color: "#0088FE" },
+    { label: "Fat", value: fatVal, color: "#00C49F" },
+    { label: "Carb", value: carbVal, color: "#FFBB28" },
   ];
 
   const sizing = {
@@ -27,7 +22,7 @@ function ChartView() {
     return `${percent}%`;
   };
   return (
-    <PieChart
+    <PieChart 
       series={[
         {
           outerRadius: 80,
