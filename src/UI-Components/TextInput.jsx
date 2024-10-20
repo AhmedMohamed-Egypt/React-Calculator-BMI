@@ -1,9 +1,10 @@
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
-function TextInput({ value, onChange, endTitle,label }) {
+function TextInput({ value, onChange, endTitle,label,className }) {
   return (
     <TextField
+     className={className}
       label={label}
       id="outlined-start-adornment"
       sx={{ m: 1, width: "25ch" }}

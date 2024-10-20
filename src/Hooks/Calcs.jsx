@@ -27,7 +27,7 @@ function calulate(factor, data) {
     percentCarbs:((totalPortions.totalCarbs)/totalCalories).toFixed(2) * 100
   }
 
-
+  console.log(totalCalories)
 
   return { calcsData, totalCalories, totalPortions ,totalPortionPercentage};
 }

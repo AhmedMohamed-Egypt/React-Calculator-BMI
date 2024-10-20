@@ -4,7 +4,7 @@ function ChartView({proteinVal,fatVal,carbVal}) {
   
  
   const data = [
-    { label: "Protien", value: proteinVal, color: "#0088FE" },
+    { label: "Protien", value: proteinVal, color: "#fd79a8" },
     { label: "Fat", value: fatVal, color: "#00C49F" },
     { label: "Carb", value: carbVal, color: "#FFBB28" },
   ];

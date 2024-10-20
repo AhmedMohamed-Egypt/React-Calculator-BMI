@@ -5,6 +5,7 @@ import TextInput from "../UI-Components/TextInput";
 import BasicButtons from "../UI-Components/BasicButtons";
 import { UseBodyContext } from "../Context/BodyContext";
 import { NavLink, useNavigate,Navigate  } from "react-router-dom";
+import Container from "../UI-Components/Container";
 
 const initialState = {
   gender: "",
@@ -76,18 +77,18 @@ const handleNav =(e)=>{
 
   return (
     <>
-      <div className="container containerCentralized mx-auto border bg-white border-gray-300 px-3">
-        <h3 className="text-center mb-[25px] text-2xl">
-          Welcome to Our Calculator
-        </h3>
+    <Container className={`w-[700px] containerCentralized py-[50px] mx-auto border bg-white border-gray-300 px-3`}>
+    
+        <h1 className="text-center text-2xl font-bold">
+        M$NR Macro Calculator
+        </h1>
+        <img src="./-ju0qjg.jpg" className="logo"/>
         <div className="flex items-center justify-center flex-wrap">
-          <p className="w-full text-center mb-2 italic font-medium">
-            Click on your Gender
-          </p>
+        
           <div className="mr-[10px]">
             <label
               htmlFor="male"
-              className={`btnGender bg-blue-600 ${
+              className={`btnGender bg-[#2980b9] ${
                 (gender || data.gender) == "male" ? "opacity-100" : ""
               }`}
             >
@@ -106,7 +107,7 @@ const handleNav =(e)=>{
           <div className="ml-[10px]">
             <label
               htmlFor="female"
-              className={`btnGender bg-rose-500 ${
+              className={`btnGender bg-[#9b59b6] ${
                 (gender || data.gender) == "female" ? "opacity-100" : ""
               }`}
             >
@@ -128,6 +129,7 @@ const handleNav =(e)=>{
               endTitle={data.weightUnit}
               value={weight || data.weight}
               onChange={(e) => handleChange(+e.target.value)}
+              className="textInput"
             />
           </div>
           <div className="w-[38%]">
@@ -136,6 +138,7 @@ const handleNav =(e)=>{
               label="Weight-Unit"
               value={weightUnit || data.weightUnit}
               onChange={(e) => handleSelect(e.target.value)}
+              className = 'selectBox'
             >
               <MenuItem value={"Kg"}>Kg</MenuItem>
               <MenuItem
@@ -160,7 +163,9 @@ const handleNav =(e)=>{
             Calculate
           </NavLink>
         </div>
-      </div>
+    
+    </Container>
+    
     </>
   );
 }

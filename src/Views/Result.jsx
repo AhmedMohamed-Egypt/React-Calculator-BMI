@@ -30,7 +30,7 @@ function Result() {
       </div>
       <NavLink to={"/"} className={'absolute left-[15px] top-[20px] px-[20px] py-[5px] rounded-[8px] bg-black text-white'}>Back</NavLink>
       <div className="w-full flex justify-center mt-[50px]">
-        <BasicButtons txt="Show Recommended Foods" onClick={()=>Navigate('/DataFoods')}/>
+        <BasicButtons className={`btn-recommend`} txt="Show Recommended Foods" onClick={()=>Navigate('/DataFoods')}/>
       </div>
     </div>
   );
