@@ -26,7 +26,9 @@ function reducer(snState, action) {
       }
     }
     case "updateWeight": {
-      return { ...snState, weight: action.payload };
+      const checkWeight = !isNaN(action.payload)?(+action.payload):0
+     
+      return { ...snState, weight:checkWeight};
     }
     case "updateSelect": {
       return { ...snState, weightUnit: action.payload };
@@ -54,7 +56,11 @@ function StartPage() {
 
   const handleChange = (param) => {
     dispatch({ type: "updateWeight", payload: param });
-    getData({ ...data, weight: param });
+    if(!isNaN(param)){
+      getData({ ...data, weight: param });
+    }else {
+      getData({ ...data, weight: 0 });
+    }
   };
   const handleSelect = (selectValue) => {
     dispatch({ type: "updateSelect", payload: selectValue });
@@ -77,7 +83,7 @@ const handleNav =(e)=>{
 
   return (
     <>
-    <Container className={`w-[700px] containerCentralized py-[50px] mx-auto border bg-white border-gray-300 px-3`}>
+    <Container className={`w-[700px] mx-w-[90%] containerCentralized py-[50px] mx-auto border bg-white border-gray-300 px-3`}>
     
         <h1 className="text-center text-2xl font-bold">
         M$NR Macro Calculator
@@ -128,7 +134,7 @@ const handleNav =(e)=>{
             <TextInput
               endTitle={data.weightUnit}
               value={weight || data.weight}
-              onChange={(e) => handleChange(+e.target.value)}
+              onChange={(e) => handleChange(e.target.value)}
               className="textInput"
             />
           </div>

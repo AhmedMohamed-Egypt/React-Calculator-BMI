@@ -194,7 +194,7 @@ function CustomizeMeals({ meals, setMeals, selectedItems, handleSelect }) {
           <>
             {types.map((itemElmnt, index) => (
               <div
-                className="w-[90%] mx-auto py-[15px] bg-[#0f172a1a] text-white mb-3 relative  flex flex-wrap pl-[10px]"
+                className="w-[90%] mx-auto py-[15px] bg-[#ecf0f1] text-white mb-3 relative  flex flex-wrap pl-[10px]"
                 key={index}
               >
                 {itemElmnt.addedItem ? (
@@ -254,15 +254,16 @@ function CustomizeMeals({ meals, setMeals, selectedItems, handleSelect }) {
               {item.addedItem.map((item, indexItem) => (
                 <div
                   key={indexItem}
-                  className={` flex items-center mb-[5px] bg-black text-white rounded-[20px] px-4 py-2 mr-[10px]`}
+                  className={` flex items-center mb-[5px] bg-[#ecf0f1]  text-[#000] rounded-[20px] px-4 py-2 mr-[10px]`}
                 >
                   <p className="mr-[10px] text-[13px] font-medium">{`${item.name}`} </p>
-                  <p className="mr-[10px] text-[13px] font-medium">{`${Math.ceil(
-                    item.cal
-                  )}cal`}</p>
-                  <p className="text-[13px] font-medium" >{`${Math.ceil(item.weight).toFixed(
+                  <p className="text-[13px] font-medium mr-[10px]" >{`${Math.ceil(item.weight).toFixed(
                     0
                   )}g`}</p>
+                  <p className=" text-[13px] font-medium">{`${Math.ceil(
+                    item.cal
+                  )}cal`}</p>
+                  
                 </div>
               ))}
             </div>

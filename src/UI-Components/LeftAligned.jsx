@@ -9,23 +9,23 @@ function LeftAligned({leanmass,fat,carb,protien,calories,wt,wtUnit,gndr}) {
           <dl className="divide-y divide-gray-100">
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
               <dt className="text-sm font-medium leading-6 text-gray-900">Lean Mass</dt>
-              <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{leanmass}</dd>
+              <dd className="mt-1 text-[18px] leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{leanmass}</dd>
             </div>
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
               <dt className="text-sm font-medium leading-6 text-gray-900">Fat g</dt>
-              <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{fat}</dd>
+              <dd className="mt-1 text-[18px] leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{fat}</dd>
             </div>
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
               <dt className="text-sm font-medium leading-6 text-gray-900">Carb g</dt>
-              <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{carb}</dd>
+              <dd className="mt-1 text-[18px] leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{carb}</dd>
             </div>
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
               <dt className="text-sm font-medium leading-6 text-gray-900">Protien g</dt>
-              <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{protien}</dd>
+              <dd className="mt-1 text-[18px] leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{protien}</dd>
             </div>
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
               <dt className="text-sm font-medium leading-6 text-gray-900">Total Calories</dt>
-              <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{calories} </dd>
+              <dd className="mt-1 text-[18px] leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{calories} </dd>
             </div>
             
           </dl>

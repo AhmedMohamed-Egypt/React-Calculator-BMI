@@ -14,7 +14,7 @@ function Result() {
   storedItem.activeState ?true:false
   const Navigate = useNavigate()
   return (
-    <div className="container flex-wrap flex items-center justify-center containerCentralized mx-auto border bg-white border-gray-300 px-3">
+    <div className=" flex-wrap flex items-center justify-center containerCentralized mx-auto border bg-white border-gray-300 px-3">
     {activeState==true?     <LeftAligned
       leanmass={leanMass}
       fat={fats}

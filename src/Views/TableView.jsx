@@ -98,7 +98,7 @@ const columns = [
     dispatch({type:'unselectAll'})
   }
   return (
-     <Container className="customContainerTable flex py-[50px]">
+     <Container className="customContainerTable flex py-[50px] flex-wrap">
      <div className='w-[55%]'>
 
      <CustomizeMeals handleSelect={()=>handleSelect()}  selectedItems={selectedItems} meals={meals} setMeals={setMeals} data={mydata}/>
@@ -122,7 +122,7 @@ const columns = [
                   align={column.align}
                   style={{ minWidth: column.minWidth }}
                 >
-                  <div style={{"fontSize":"16px","fontWeight":400}}>
+                  <div style={{"fontSize":"14px","fontWeight":400}}>
                   
                   {column.label}
                   
@@ -182,7 +182,12 @@ const columns = [
       </div>
    
       <NavLink to={"/result"} className={'absolute left-[15px] top-[20px] px-[20px] py-[5px] rounded-[8px] bg-black text-white'}>Back</NavLink>
+   <div className='w-full flex justify-center'>
+   <NavLink to={"/"} className={'resetBtn left-[15px] top-[20px] px-[20px] py-[5px] rounded-[8px] bg-black text-white'}>Reset</NavLink>
+
+   </div>
     </Container>
+
   
    
   );

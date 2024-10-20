@@ -5,7 +5,7 @@ const BodyContext = createContext();
 
 //Create Provider
 const initialState = {
-  data: { gender: '', weight: '', weightUnit: '' ,activeState:false},
+  data: { gender: '', weight: 0, weightUnit: '' ,activeState:false},
   
 };
 function reducer(snState, action) {
