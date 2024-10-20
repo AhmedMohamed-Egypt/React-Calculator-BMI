@@ -99,12 +99,12 @@ const columns = [
   }
   return (
      <Container className="customContainerTable flex py-[50px] flex-wrap">
-     <div className='w-[55%]'>
+     <div className='w-[50%]'>
 
      <CustomizeMeals handleSelect={()=>handleSelect()}  selectedItems={selectedItems} meals={meals} setMeals={setMeals} data={mydata}/>
   
       </div>
-      <div className='w-[45%]'>
+      <div className='w-[50%]'>
 
      <div className='flex justify-between mb-[10px]'>
       {selectedItems.length>0&&<p className='bg-black text-white py-[5px] px-[10px] rounded-[10px] text-[12px] font-bold'>{selectedItems.length>0?`${selectedItems.length} Selected`:''}</p>}

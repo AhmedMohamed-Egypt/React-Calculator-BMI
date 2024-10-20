@@ -169,7 +169,7 @@ function CustomizeMeals({ meals, setMeals, selectedItems, handleSelect }) {
     <p className="text-center mb-1 text-[24px] font-bold italic">Total Calories {totalCalories}</p>
     </div>
       <div className="mb-3">
-        <div className="w-[400px] mx-auto">
+        <div className="w-[400px] mx-auto max-w-[90%]">
           <SelectBox
             value={meals}
             title="How Many meals"
