@@ -106,16 +106,23 @@ function reducer(snState, action) {
               const newWt =
                 (caloriesForEachMeal * +itemAdded.quantityPermeal) /
                 +itemAdded.calories;
+                
               return {
                 name: itemAdded.name,
-                cal: caloriesForEachMeal,
+                cal: +caloriesForEachMeal,
                 weight: newWt,
               };
             })
           : [];
-        return { ...item, addedItem: calcAddeditem };
-      });
 
+          const getCalories = Math.abs(calcAddeditem.map((item)=>item.cal).reduce((a,b)=>{
+            return a + b
+          },0))
+         
+         
+        return { ...item, addedItem: calcAddeditem,total:getCalories };
+      });
+  
       return {
         ...snState,
         showFinal: action.payload.bool,
@@ -133,10 +140,11 @@ const mealsIndex = {
   2: {name:"Third Meal"},
   3: {name:"Fourth Meal"},
 };
+
 function CustomizeMeals({ meals, setMeals, selectedItems, handleSelect }) {
   const storedItem = JSON.parse(localStorage.getItem("storedItem"));
   const { totalCalories } = Calcs(storedItem);
-  console.log(storedItem)
+ 
 
   const [{ types, doneStatus, showFinal, calcFinalMeals }, dispatch] =
     useReducer(reducer, initialState);
@@ -161,6 +169,7 @@ function CustomizeMeals({ meals, setMeals, selectedItems, handleSelect }) {
       payload: { bool: true, totalCal: totalCalories },
     });
   };
+const totalCalroiesformeals = calcFinalMeals.map((item)=>item.total).reduce((a,b)=>a+b,0)
 
   return (
     <div>
@@ -245,11 +254,16 @@ function CustomizeMeals({ meals, setMeals, selectedItems, handleSelect }) {
       {doneStatus &&
         showFinal &&
         calcFinalMeals.map((item, index) => (
+        
           <div key={index} className="w-[90%] mx-auto">
-            <p className="w-full mb-[5px] pl-[10px] font-medium text-[15px]">{mealsIndex[index].name}</p>
+           
+            <div className="flex items-center w-full mb-[5px] bg-[#818887] rounded-[20px] text-white">
+            <p className="pl-[10px] font-medium text-[15px]"> {mealsIndex[index].name}</p>
+            <p className="font-medium ml-[10px]"> = {item.total} Calories</p>
+            </div>
             <div
               key={index}
-              className={`text-white mb-3 flex   rounded-[30px] flex-wrap ${index==calcFinalMeals.length-1?'pb-[50px]':''}`}
+              className={`text-white mb-3 flex   rounded-[30px] flex-wrap ${index==calcFinalMeals.length-1?'':''}`}
             >
               {item.addedItem.map((item, indexItem) => (
                 <div
@@ -265,10 +279,17 @@ function CustomizeMeals({ meals, setMeals, selectedItems, handleSelect }) {
                   )}cal`}</p>
                   
                 </div>
+                
               ))}
             </div>
+          
           </div>
+          
         ))}
+        {totalCalroiesformeals>0&&<div className="w-[90%] mx-auto">
+            <p className="font-medium">Total Calroies Consumed through Day Meals Approx ~<span className="font-bold">{totalCalroiesformeals}</span> Cal</p>
+           </div>}
+         
     </div>
   );
 }

@@ -182,7 +182,7 @@ const columns = [
       </div>
    
       <NavLink to={"/result"} className={'absolute left-[15px] top-[20px] px-[20px] py-[5px] rounded-[8px] bg-black text-white'}>Back</NavLink>
-   <div className='w-full flex justify-center'>
+   <div className='w-full flex justify-center mt-[15px]'>
    <NavLink to={"/"} className={'resetBtn left-[15px] top-[20px] px-[20px] py-[5px] rounded-[8px] bg-black text-white'}>Reset</NavLink>
 
    </div>
