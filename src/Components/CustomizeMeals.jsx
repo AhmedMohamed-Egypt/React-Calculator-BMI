@@ -117,7 +117,7 @@ function reducer(snState, action) {
 
           const getCalories = Math.abs(calcAddeditem.map((item)=>item.cal).reduce((a,b)=>{
             return a + b
-          },0))
+          },0).toFixed(2))
          
          
         return { ...item, addedItem: calcAddeditem,total:getCalories };
