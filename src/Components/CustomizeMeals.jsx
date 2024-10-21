@@ -169,7 +169,7 @@ function CustomizeMeals({ meals, setMeals, selectedItems, handleSelect }) {
       payload: { bool: true, totalCal: totalCalories },
     });
   };
-const totalCalroiesformeals = calcFinalMeals.map((item)=>item.total).reduce((a,b)=>a+b,0)
+const totalCalroiesformeals = calcFinalMeals.map((item)=>item.total).reduce((a,b)=>a+b,0).toFixed(1)
 
   return (
     <div>
