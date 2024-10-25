@@ -10,8 +10,10 @@ import TableRow from '@mui/material/TableRow';
 import { Calcs } from "../Hooks/Calcs";
 import Container from '../UI-Components/Container';
 import { NavLink, useNavigate } from "react-router-dom";
-
+import BasicButtons from '../UI-Components/BasicButtons';
 import CustomizeMeals from '../Components/CustomizeMeals';
+import SimpleBackdrop from '../UI-Components/SimpleBackdrop';
+
 const initialState={
   selectedItems:[],
   stateBtns:[],
@@ -97,16 +99,24 @@ const columns = [
   function unselect(){
     dispatch({type:'unselectAll'})
   }
+  const [close,setClose] = useState(false)
+ 
   return (
-     <Container className="customContainerTable flex py-[50px] flex-wrap">
-     <div className='w-[50%]'>
-
-     <CustomizeMeals handleSelect={()=>handleSelect()}  selectedItems={selectedItems} meals={meals} setMeals={setMeals} data={mydata}/>
-  
+    <>
+     <div className={`floatTable ${close?'close':''}`}>
+      <div className='dietPng'>
+        <img src="./diet.png" alt="Diet" />
       </div>
-      <div className='w-[50%]'>
+      <div className='showFoodsTable'>
+        <button onClick={()=>setClose((op)=>!op)}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+        <path style={{"fill":"#232326"}} d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z" data-name="Right"/></svg>
+        </button>
+      </div>
+    {/*  <BasicButtons onClick={handleOpen}>Show backdrop</BasicButtons>*/}
+     
 
-     <div className='flex justify-between mb-[10px]'>
+     <div className='flex justify-between mb-[10px] select-unselect '>
       {selectedItems.length>0&&<p className='bg-black text-white py-[5px] px-[10px] rounded-[10px] text-[12px] font-bold'>{selectedItems.length>0?`${selectedItems.length} Selected`:''}</p>}
       
     {selectedItems.length>0&& <button onClick={()=>unselect()} className='bg-red-600 font-medium block ml-[auto] text-white py-[5px] px-[10px]  text-[12px] rounded-[8px]'>Un Select All</button>}
@@ -155,8 +165,8 @@ const columns = [
                         </label>
                         <div>
           {name!==''&&<>
-            <button disabled={(stateBtns.indexOf(id)>-1 || meals=='') ?true:false} onClick={()=>{addItem({name,quantityPermeal,calories,id})}} className={`p-1 bg-white rounded-sm text-black text-[12px]  ${stateBtns.indexOf(id)>-1 || meals==''?'selectBtn':''}`}>{stateBtns.indexOf(id)>-1?'selected':'select'}</button>
-            <button onClick={()=>removeItem(id)} disabled={(stateBtns.indexOf(id)>-1) ?false:true} className={`${stateBtns.indexOf(id)>-1?'opacity-100':'opacity-15'}  ml-[10px] p-1 bg-black rounded-sm text-white text-[12px]`}>un select</button>
+            <button disabled={(stateBtns.indexOf(id)>-1 || meals=='') ?true:false} onClick={()=>{addItem({name,quantityPermeal,calories,id})}} className={`p-1 bg-white rounded-sm text-black text-[12px] addBtn  ${stateBtns.indexOf(id)>-1 || meals==''?'selectBtn':''}`}>{stateBtns.indexOf(id)>-1?'selected':'select'}</button>
+            <button onClick={()=>removeItem(id)} disabled={(stateBtns.indexOf(id)>-1) ?false:true} className={`${stateBtns.indexOf(id)>-1?'opacity-100':'opacity-15'}  ml-[10px] p-1 removeBtn bg-black rounded-sm text-white text-[12px]`}>un select</button>
           </>}
       
                           
@@ -180,15 +190,23 @@ const columns = [
     
     </Paper>
       </div>
+   {/* <SimpleBackdrop setOpen={setOpen} open = {open}/>*/ }
+     <Container className="customContainerTable flex py-[50px] flex-wrap">
+     <div className='w-[100%]'>
+
+     <CustomizeMeals handleSelect={()=>handleSelect()}  selectedItems={selectedItems} meals={meals} setMeals={setMeals} data={mydata}/>
+  
+      </div>
+     
    
       <NavLink to={"/result"} className={'absolute left-[15px] top-[20px] px-[20px] py-[5px] rounded-[8px] bg-black text-white'}>Back</NavLink>
-   <div className='w-full flex justify-center mt-[15px]'>
+   <div className='w-full flex justify-center mt-[15px] self-end'>
    <NavLink to={"/"} className={'resetBtn left-[15px] top-[20px] px-[20px] py-[5px] rounded-[8px] bg-black text-white'}>Reset</NavLink>
 
    </div>
     </Container>
 
-  
+    </>
    
   );
 }

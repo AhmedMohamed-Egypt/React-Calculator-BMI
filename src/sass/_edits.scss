@@ -30,8 +30,12 @@ body{
         border:4px solid #f4f4f4
     }
     th{
-        background-color: #000 !important;
+        background-color: #94a1b3  !important;
         color: #fff !important;
+        >div{
+            line-height: 1.2;
+            font-weight: 500 !important;
+        }
     }
     tbody{
         td{
@@ -60,8 +64,8 @@ body{
 }
 .customContainerTable{
   //  padding: 0;
-  overflow-y: scroll;
-  height:800px;
+ 
+  
   &::-webkit-scrollbar {
     background-color:#000;
     width:8px
@@ -86,6 +90,8 @@ body{
     border:4px solid #f4f4f4
 }
 
+
+
 }
 .customMeal{
     padding: 12px 15px;
@@ -103,10 +109,20 @@ button:disabled{
 button.btn-recommend{
     background-color: #d63031;
 }
-
-button.selectBtn:disabled{
-    background-color: #b90000;
+ 
+button.addBtn{
+    background-color: rgb(255, 187, 40);
     color: #fff;
+    border-radius: 50px;
+    font-weight: 400;
+    padding: 5px 10px;
+}
+button.removeBtn{
+    background-color: #4d55cd;
+    
+    border-radius: 50px;
+    font-weight: 400;
+    padding: 5px 10px;
 }
 //selectBtn
 .customize-meal{
@@ -151,4 +167,73 @@ button.calcQuantity{
     border: 0px solid #000;
     font-weight: 500;
     padding-bottom: 7px;
+}
+.floatTable{
+    position: fixed;
+    max-width: 400px;
+    left: 0;
+    background-color: #23233a;
+    padding: 20px 10px;
+    height: 100%;
+    transition: .25s;
+    .dietPng{
+        display: none;
+    }
+
+    &.close{
+        max-width: 55px;
+        .MuiPaper-root{
+            opacity: 0;
+            z-index: -1;
+            position: relative;
+        }
+        .showFoodsTable{
+          button{
+            transform: rotate(0deg);
+          }
+        }
+        .dietPng{
+            display: block;
+        }
+        .select-unselect{
+            opacity: 0;
+        }
+    }
+}
+
+.customContainerTable{
+    width: 500px;
+    max-width: 90%;
+
+}
+.showFoodsTable{
+    position: absolute;
+    bottom: 50px;
+    right: 15px;
+    button{
+        transition: .25s;
+        transform: rotate(180deg);
+    }
+    svg{
+        width: 25px;
+        path{
+            fill: #fff !important;
+        }
+    }
+}
+
+.resultPage {
+    .divide-y{
+        position: static;
+        >div{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+    @media only screen and (max-width: 600px){
+        flex-direction: column;
+        .dataMass{
+            max-width: 100%;
+        }
+    }
 }
