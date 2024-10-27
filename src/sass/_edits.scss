@@ -6,6 +6,10 @@ body{
    &.resetBk{
     background: none;
    }
+   &.resultPage{
+    background: none;
+    background-color: #fff;
+   }
 }
 .MuiTableContainer-root{
     box-shadow: none ;
@@ -210,6 +214,23 @@ button.calcQuantity{
     max-width: 90%;
 
 }
+.container-inputs{
+    @media only screen and (max-width: 600px){
+        max-width: 90%;
+        flex-direction: column;
+        >div{
+            width: 100%;
+            margin: 0;
+            &:first-child{
+                margin-bottom: 15px;
+            }
+            .MuiFormControl-root{
+                width: 100%;
+                margin: 0;
+            }
+        }
+    }
+}
 .showFoodsTable{
     position: absolute;
     bottom: 50px;
@@ -235,9 +256,36 @@ button.calcQuantity{
         }
     }
     @media only screen and (max-width: 600px){
+    
         flex-direction: column;
+        position: static;
+        transform: none;
+        height: 500px;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+        /* padding: 50px 0; */
+        padding: 0;
+        border: none;
         .dataMass{
             max-width: 100%;
+            padding-top: 50px;
+
+        }
+        .divide-y{
+            display: flex;
+            flex-wrap: wrap;
+           // justify-content: center;
+        }
+        .dataChart ~a{
+            left: auto;
+            right: 15px;
+        }
+        .dataChart ~div{
+            margin-top: 0px;
+            padding-bottom: 40px;
         }
     }
 }

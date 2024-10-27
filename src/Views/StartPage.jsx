@@ -80,10 +80,10 @@ const handleNav =(e)=>{
     navigate("/result")
 }
 document.querySelector('body').classList.remove('resetBk')
-
+document.querySelector('body').classList.remove('resultPage')
   return (
     <>
-    <Container className={`w-[700px] mx-w-[90%] containerCentralized py-[50px] mx-auto border bg-white border-gray-300 px-3`}>
+    <Container className={`w-[700px] max-w-[90%] containerCentralized py-[50px] mx-auto border bg-white border-gray-300 px-3`}>
     
         <h1 className="text-center text-2xl font-bold">
         M$NR Macro Calculator
@@ -129,7 +129,7 @@ document.querySelector('body').classList.remove('resetBk')
             />
           </div>
         </div>
-        <div className="w-[400px] mx-auto my-[25px] flex items-center justify-between">
+        <div className="w-[400px] container-inputs mx-auto my-[25px] flex items-center justify-between">
           <div className="w-[58%]">
             <TextInput
               endTitle={data.weightUnit}

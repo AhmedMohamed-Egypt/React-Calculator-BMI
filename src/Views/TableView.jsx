@@ -103,7 +103,7 @@ const columns = [
   }
   
   document.querySelector('body').classList.add('resetBk')
- 
+  document.querySelector('body').classList.remove('resultPage')
   return (
     <div className='flex container-datafoods'>
      <div className={`floatTable   ${close?'close':''}`}>

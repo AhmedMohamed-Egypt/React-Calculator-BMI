@@ -14,6 +14,8 @@ function Result() {
   storedItem.activeState ?true:false
   const Navigate = useNavigate()
   document.querySelector('body').classList.remove('resetBk')
+  document.querySelector('body').classList.add('resultPage')
+  
   return (
     <div className="resultPage max-w-[90%] flex-wrap flex items-center justify-center containerCentralized mx-auto border bg-white border-gray-300 px-3">
     {activeState==true?     <LeftAligned
