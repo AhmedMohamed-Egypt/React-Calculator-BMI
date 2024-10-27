@@ -79,7 +79,7 @@ const handleNav =(e)=>{
     }
     navigate("/result")
 }
-  
+document.querySelector('body').classList.remove('resetBk')
 
   return (
     <>

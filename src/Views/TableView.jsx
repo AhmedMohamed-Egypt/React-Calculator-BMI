@@ -80,7 +80,7 @@ const columns = [
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
+  const [close,setClose] = useState(false)
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -95,15 +95,18 @@ const columns = [
   }
   function handleSelect(){
     dispatch({type:'handle'})
+    
+    
   }
   function unselect(){
     dispatch({type:'unselectAll'})
   }
-  const [close,setClose] = useState(false)
+  
+  document.querySelector('body').classList.add('resetBk')
  
   return (
-    <>
-     <div className={`floatTable ${close?'close':''}`}>
+    <div className='flex container-datafoods'>
+     <div className={`floatTable   ${close?'close':''}`}>
       <div className='dietPng'>
         <img src="./diet.png" alt="Diet" />
       </div>
@@ -121,6 +124,9 @@ const columns = [
       
     {selectedItems.length>0&& <button onClick={()=>unselect()} className='bg-red-600 font-medium block ml-[auto] text-white py-[5px] px-[10px]  text-[12px] rounded-[8px]'>Un Select All</button>}
      </div>
+    
+
+     
       <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 'auto' }}>
         <Table stickyHeader aria-label="sticky table">
@@ -191,7 +197,8 @@ const columns = [
     </Paper>
       </div>
    {/* <SimpleBackdrop setOpen={setOpen} open = {open}/>*/ }
-     <Container className="customContainerTable flex py-[50px] flex-wrap">
+   <div style={{"width":"calc(100% - 400px)","flexGrow":1}}>
+   <Container className="customContainerTable flex py-[50px] flex-wrap">
      <div className='w-[100%]'>
 
      <CustomizeMeals handleSelect={()=>handleSelect()}  selectedItems={selectedItems} meals={meals} setMeals={setMeals} data={mydata}/>
@@ -199,14 +206,18 @@ const columns = [
       </div>
      
    
-      <NavLink to={"/result"} className={'absolute left-[15px] top-[20px] px-[20px] py-[5px] rounded-[8px] bg-black text-white'}>Back</NavLink>
-   <div className='w-full flex justify-center mt-[15px] self-end'>
-   <NavLink to={"/"} className={'resetBtn left-[15px] top-[20px] px-[20px] py-[5px] rounded-[8px] bg-black text-white'}>Reset</NavLink>
+     
+   <div className='w-full flex justify-center  self-end'>
+   {/*<NavLink to={"/"} className={'resetBtn left-[15px] top-[20px] px-[20px] py-[5px] rounded-[8px] bg-black text-white'}>Reset</NavLink>*/ }
 
    </div>
     </Container>
+   </div>
+ 
+  {/*
+    <NavLink to={"/result"} className={'w-[150px] text-center mx-auto absolute left-0 right-0 top-[20px] px-[20px] py-[5px] rounded-[8px] bg-black text-white'}>Previous Page</NavLink>*/}
 
-    </>
+    </div>
    
   );
 }

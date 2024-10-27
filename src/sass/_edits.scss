@@ -3,6 +3,9 @@ body{
    // background-color: #e2e8f0;
    height: 100vh;
    background-image: linear-gradient(to right top, #dbdee3, #acb2b5, #818887, #5a5f5c, #383935);
+   &.resetBk{
+    background: none;
+   }
 }
 .MuiTableContainer-root{
     box-shadow: none ;
@@ -169,13 +172,14 @@ button.calcQuantity{
     padding-bottom: 7px;
 }
 .floatTable{
-    position: fixed;
+    position: relative;
     max-width: 400px;
     left: 0;
     background-color: #23233a;
     padding: 20px 10px;
-    height: 100%;
+    height: 100vh;
     transition: .25s;
+    
     .dietPng{
         display: none;
     }
@@ -234,6 +238,99 @@ button.calcQuantity{
         flex-direction: column;
         .dataMass{
             max-width: 100%;
+        }
+    }
+}
+.customContainerTable {
+    padding: 0;
+    transform: none;
+    margin: 0;
+    width: 500px;
+    /* margin: auto; */
+    background: none;
+    border: none;
+    top: 50%;
+    left: 50%;
+    position: static;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    /* background-color: #f00; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #dde1e87a;
+}
+.customizeMeals{
+    width: 500px;
+    margin: auto;
+    max-width: 90%;
+    background-color: #0a141fe6;
+    color: #fff;
+    padding: 50px 0;
+    border-radius: 15px;
+}
+.how-many-meals{
+    label{
+        color: #fff !important;
+    }
+    .MuiInputBase-root{
+        &:hover{
+            border: 1px solid transparent !important;
+            .MuiSelect-select{
+                border: 1px solid transparent !important;
+               
+            }
+            fieldset{
+                border: 1px solid #fff !important;
+            }
+        }
+    }
+    .MuiSelect-select{
+      //  border: 1px solid #fff;
+      color: #fff;
+        &:hover{
+            border: 1px solid #fff;
+        }
+    }
+    fieldset{
+        border: 1px solid #fff !important;
+        legend span{
+            color: #fff !important;
+        }
+    }
+    svg{
+        fill: #fff;
+    }
+}
+
+.container-datafoods{
+    @media only screen and (max-width: 600px){
+        flex-direction: column;
+        .showFoodsTable,.dietPng{
+            display: none;
+        }
+        .floatTable   {
+            height: auto;
+            max-width: 100%;
+            order: 5;
+            min-height: 100vh;
+            &~div{
+                width: 100% !important;
+            }
+        }
+        .MuiPaper-root {
+            height: 400px;
+            overflow-y: scroll;
+        }
+        .customizeMeals{
+            border-radius: 0;
+            width: 100%;
+            max-width: 100%;
+        }
+        .customContainerTable {
+            background: none;
         }
     }
 }

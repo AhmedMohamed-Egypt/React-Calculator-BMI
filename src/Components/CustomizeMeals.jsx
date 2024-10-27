@@ -172,7 +172,7 @@ function CustomizeMeals({ meals, setMeals, selectedItems, handleSelect }) {
 const totalCalroiesformeals = calcFinalMeals.map((item)=>item.total).reduce((a,b)=>a+b,0).toFixed(1)
 
   return (
-    <div>
+    <div className="customizeMeals">
     <div className="">
     
     <p className="text-center mb-1 text-[24px] font-bold italic">Total Calories {totalCalories}</p>
@@ -186,6 +186,7 @@ const totalCalroiesformeals = calcFinalMeals.map((item)=>item.total).reduce((a,b
             onChange={(e) => {
               handleSelectMeal(e.target.value);
             }}
+            className={'how-many-meals'}
           >
             
             <MenuItem value={1}>1</MenuItem>
@@ -203,7 +204,7 @@ const totalCalroiesformeals = calcFinalMeals.map((item)=>item.total).reduce((a,b
           <>
             {types.map((itemElmnt, index) => (
               <div
-                className="w-[90%] mx-auto py-[15px] bg-[#ecf0f1] text-white mb-3 relative  flex flex-wrap pl-[10px]"
+                className="w-[90%] mx-auto py-[15px] bg-[#101012] text-white mb-3 relative  flex flex-wrap pl-[10px]"
                 key={index}
               >
                 {itemElmnt.addedItem ? (
@@ -242,14 +243,7 @@ const totalCalroiesformeals = calcFinalMeals.map((item)=>item.total).reduce((a,b
           </>
         )}
 
-        {doneStatus && (
-          <button
-            onClick={() => showFinalFun()}
-            className="p-2 block mx-auto rounded-md bg-[#7f8c8d] calcQuantity font-medium px-[15px] text-white"
-          >
-            Calculate Recommended Quantity
-          </button>
-        )}
+      
       </div>
       {doneStatus &&
         showFinal &&
@@ -257,9 +251,11 @@ const totalCalroiesformeals = calcFinalMeals.map((item)=>item.total).reduce((a,b
         
           <div key={index} className="w-[90%] mx-auto">
            
-            <div className="flex items-center w-full mb-[5px] bg-[#818887] rounded-[20px] text-white">
-            <p className="pl-[10px] font-medium text-[15px]"> {mealsIndex[index].name}</p>
-            <p className="font-medium ml-[10px]"> = {item.total} Calories</p>
+            <div className="inline-block px-[10px]  items-center mb-[5px] bg-[#ed3f66eb] rounded-[20px] text-white">
+          <div className="flex items-center">
+          <p className="pl-[10px] font-medium text-[15px]"> {mealsIndex[index].name}</p>
+          <p className="font-medium ml-[10px]"> = {item.total} Calories</p>
+          </div>
             </div>
             <div
               key={index}
@@ -286,9 +282,17 @@ const totalCalroiesformeals = calcFinalMeals.map((item)=>item.total).reduce((a,b
           </div>
           
         ))}
-        {totalCalroiesformeals>0&&<div className="w-[90%] mx-auto">
+        {totalCalroiesformeals>0&&<div className="w-[250px] mx-auto">
             <p className="font-medium">Total Calroies Consumed through Day Meals Approx ~<span className="font-bold">{totalCalroiesformeals}</span> Cal</p>
            </div>}
+           {doneStatus && (
+          <button
+            onClick={() => showFinalFun()}
+            className="mt-[15px] p-2 block mx-auto rounded-md bg-[#7f8c8d] calcQuantity font-medium px-[15px] text-white"
+          >
+            Calculate Recommended Quantity
+          </button>
+        )}
          
     </div>
   );
