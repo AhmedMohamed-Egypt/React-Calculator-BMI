@@ -197,7 +197,8 @@ const columns = [
     </Paper>
       </div>
    {/* <SimpleBackdrop setOpen={setOpen} open = {open}/>*/ }
-   <div style={{"width":"calc(100% - 400px)","flexGrow":1}}>
+   <div className="relative" style={{"width":"calc(100% - 400px)","flexGrow":1}}>
+   <NavLink to={"/result"} className={'absolute left-[15px] top-[20px] px-[20px] py-[5px] rounded-[8px] bg-black text-white'}>Back</NavLink>
    <Container className="customContainerTable flex py-[50px] flex-wrap">
      <div className='w-[100%]'>
 

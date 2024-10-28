@@ -2,13 +2,15 @@
 body{
    // background-color: #e2e8f0;
    height: 100vh;
-   background-image: linear-gradient(to right top, #dbdee3, #acb2b5, #818887, #5a5f5c, #383935);
+   background-color: #000;
    &.resetBk{
     background: none;
    }
    &.resultPage{
+    /*
     background: none;
     background-color: #fff;
+    */
    }
 }
 .MuiTableContainer-root{
