@@ -125,13 +125,20 @@ button.addBtn{
     border-radius: 50px;
     font-weight: 400;
     padding: 5px 10px;
+    @media only screen and (max-width: 600px){
+        padding: 5px 5px;
+    }
 }
 button.removeBtn{
     background-color: #4d55cd;
     
     border-radius: 50px;
     font-weight: 400;
+
     padding: 5px 10px;
+    @media only screen and (max-width: 600px){
+        padding: 5px 5px;
+    }
 }
 //selectBtn
 .customize-meal{

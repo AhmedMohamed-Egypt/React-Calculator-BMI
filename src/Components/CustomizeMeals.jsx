@@ -282,7 +282,7 @@ const totalCalroiesformeals = calcFinalMeals.map((item)=>item.total).reduce((a,b
           </div>
           
         ))}
-        {totalCalroiesformeals>0&&<div className="w-[250px] mx-auto">
+        {totalCalroiesformeals>0&&<div className="w-[250px] mx-auto text-center">
             <p className="font-medium">Total Calroies Consumed through Day Meals Approx ~<span className="font-bold">{totalCalroiesformeals}</span> Cal</p>
            </div>}
            {doneStatus && (
