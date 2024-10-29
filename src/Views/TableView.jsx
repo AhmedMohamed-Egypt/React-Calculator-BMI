@@ -63,7 +63,7 @@ const columns = [
   }
   const settingMeals = meals==""?1:meals
   const mydata = [
-  {id:1,carbName:{name:'White Rice',QTY:(carbs/.26),calories:totalCarbs,serialId:1},protienName:{name:'Beef Mince 5% Leaf',QTY:(protien/.21),calories:totalProtien,serialId:2}},
+  {id:1,carbName:{name:'White Rice',QTY:(carbs/.26),calories:totalCarbs,serialId:1},protienName:{name:'Beef Mince 5% Lean',QTY:(protien/.21),calories:totalProtien,serialId:2}},
   {id:2,carbName:{name:'Sweet Potato',QTY:(carbs/.17),calories:totalCarbs,serialId:3},protienName:{name:'Chicekn Breast',QTY:(protien/.26),calories:totalProtien,serialId:4}},
   {id:3,carbName:{name:'Oats',QTY:(carbs/.1),calories:totalCarbs,serialId:5},protienName:{name:'Turkey Breast',QTY:(protien/.3),calories:totalProtien,serialId:6}},
   {id:4,carbName:{name:'Brown Rice',QTY:(carbs/.21),calories:totalCarbs,serialId:7},protienName:{name:'Tuna',QTY:(protien/.23),calories:totalProtien,serialId:8}},
