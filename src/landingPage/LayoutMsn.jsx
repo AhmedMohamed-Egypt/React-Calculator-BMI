@@ -9,7 +9,7 @@ import Trainee from "./Trainee"
 import UnLock from "./UnLock"
 import Welcome from "./Welcome"
 
-function Layout() {
+function LayoutMsn() {
     return (
     <>
         <div className="container mx-auto">
@@ -30,4 +30,4 @@ function Layout() {
     )
 }
 
-export default Layout
+export default LayoutMsn

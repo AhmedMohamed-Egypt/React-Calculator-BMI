@@ -1,9 +1,9 @@
-import Layout from "../LandingPage/Layout"
+import LayoutMsn from "../LandingPage/LayoutMsn"
 
 function HomePage() {
     return (
         <div>
-           <Layout/>
+           <LayoutMsn/>
         </div>
     )
 }
