@@ -1,0 +1,12 @@
+
+.welcome-div{
+    min-height: 600px;
+    background-image: url('https://static.zohocdn.com/sites/stock-images/images/zpstock-image-1314.webp');
+    padding: 45px 0;
+    &__img{
+        img{
+            width: 80%;
+            margin-left: auto;
+        }
+    }
+}

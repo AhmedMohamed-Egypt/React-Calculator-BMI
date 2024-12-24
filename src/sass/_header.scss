@@ -1,0 +1,15 @@
+.headerComponent{
+    &__logo{
+        img{
+            width: 150px;
+        }
+    }
+    a{
+        padding: 2px 12px;
+        border-radius: 4px;
+        &.active{
+            background-color: #FEFF55;
+            color: #0A0A0A;
+        }
+    }
+}

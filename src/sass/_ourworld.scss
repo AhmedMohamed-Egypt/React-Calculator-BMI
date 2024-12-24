@@ -1,0 +1,22 @@
+.ourworld{
+    &__images{
+        >div{
+            position: relative;
+        }
+        img{
+            width: 330px;
+        }
+        span{
+            position: absolute;
+            bottom: 6px;
+            right: 0;
+            left: 0;
+            display: block;
+            margin: auto;
+            width: 92%;
+            text-align: center;
+            padding: 10px 0px;
+            background-color: rgba(10, 10, 10, 0.8);
+        }
+    }
+}

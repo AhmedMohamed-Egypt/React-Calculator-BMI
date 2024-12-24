@@ -6,6 +6,7 @@ import BasicButtons from "../UI-Components/BasicButtons";
 import { UseBodyContext } from "../Context/BodyContext";
 import { NavLink, useNavigate,Navigate  } from "react-router-dom";
 import Container from "../UI-Components/Container";
+import Header from '../landing-page/Header'
 
 const initialState = {
   gender: "",
@@ -83,8 +84,11 @@ document.querySelector('body').classList.remove('resetBk')
 document.querySelector('body').classList.remove('resultPage')
   return (
     <>
+    <div className="container mx-auto">
+      <Header/>
+    </div>
     <Container className={`w-[700px] max-w-[90%] containerCentralized py-[50px] mx-auto border bg-white border-gray-300 px-3`}>
-    
+      
         <h1 className="text-center text-2xl font-bold">
         M$NR Macro Calculator
         </h1>
