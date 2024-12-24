@@ -4,9 +4,9 @@ import MenuItem from "@mui/material/MenuItem";
 import TextInput from "../UI-Components/TextInput";
 import BasicButtons from "../UI-Components/BasicButtons";
 import { UseBodyContext } from "../Context/BodyContext";
-import { NavLink, useNavigate,Navigate  } from "react-router-dom";
+import { NavLink, useNavigate, Navigate } from "react-router-dom";
 import Container from "../UI-Components/Container";
-import Header from '../landingPage/Header'
+import Header from "../LandingPage/Header";
 
 const initialState = {
   gender: "",
@@ -27,9 +27,9 @@ function reducer(snState, action) {
       }
     }
     case "updateWeight": {
-      const checkWeight = !isNaN(action.payload)?(+action.payload):0
-     
-      return { ...snState, weight:checkWeight};
+      const checkWeight = !isNaN(action.payload) ? +action.payload : 0;
+
+      return { ...snState, weight: checkWeight };
     }
     case "updateSelect": {
       return { ...snState, weightUnit: action.payload };
@@ -57,9 +57,9 @@ function StartPage() {
 
   const handleChange = (param) => {
     dispatch({ type: "updateWeight", payload: param });
-    if(!isNaN(param)){
+    if (!isNaN(param)) {
       getData({ ...data, weight: param });
-    }else {
+    } else {
       getData({ ...data, weight: 0 });
     }
   };
@@ -67,34 +67,34 @@ function StartPage() {
     dispatch({ type: "updateSelect", payload: selectValue });
     getData({ ...data, weightUnit: selectValue });
   };
-  function isObjEmpty (obj) {
+  function isObjEmpty(obj) {
     return Object.keys(obj).length === 0;
-}
-localStorage.setItem('storedItem',JSON.stringify({}))
-const navigate = useNavigate()
-const handleNav =(e)=>{
-    e.preventDefault()
-    const storedItem = JSON.parse(localStorage.getItem('storedItem')) || {}
-    if(isObjEmpty(storedItem)){
-       localStorage.setItem('storedItem',JSON.stringify(data))
+  }
+  localStorage.setItem("storedItem", JSON.stringify({}));
+  const navigate = useNavigate();
+  const handleNav = (e) => {
+    e.preventDefault();
+    const storedItem = JSON.parse(localStorage.getItem("storedItem")) || {};
+    if (isObjEmpty(storedItem)) {
+      localStorage.setItem("storedItem", JSON.stringify(data));
     }
-    navigate("/result")
-}
-document.querySelector('body').classList.remove('resetBk')
-document.querySelector('body').classList.remove('resultPage')
+    navigate("/result");
+  };
+  document.querySelector("body").classList.remove("resetBk");
+  document.querySelector("body").classList.remove("resultPage");
   return (
     <>
-    <div className="container mx-auto">
-      <Header/>
-    </div>
-    <Container className={`w-[700px] max-w-[90%] containerCentralized py-[50px] mx-auto border bg-white border-gray-300 px-3`}>
-      
+      <div className="container mx-auto">
+        <Header />
+      </div>
+      <Container
+        className={`w-[700px] max-w-[90%] containerCentralized py-[50px] mx-auto border bg-white border-gray-300 px-3`}
+      >
         <h1 className="text-center text-2xl font-bold">
-        M$NR Macro Calculator
+          M$NR Macro Calculator
         </h1>
-        <img src="./-ju0qjg.jpg" className="logo"/>
+        <img src="./-ju0qjg.jpg" className="logo" />
         <div className="flex items-center justify-center flex-wrap">
-        
           <div className="mr-[10px]">
             <label
               htmlFor="male"
@@ -148,7 +148,7 @@ document.querySelector('body').classList.remove('resultPage')
               label="Weight-Unit"
               value={weightUnit || data.weightUnit}
               onChange={(e) => handleSelect(e.target.value)}
-              className = 'selectBox'
+              className="selectBox"
             >
               <MenuItem value={"Kg"}>Kg</MenuItem>
               <MenuItem
@@ -165,7 +165,7 @@ document.querySelector('body').classList.remove('resultPage')
 
         <div className="flex justify-center">
           <NavLink
-            onClick={(e)=>handleNav(e)}
+            onClick={(e) => handleNav(e)}
             className={` calcBtn ${
               data.activeState ? "z-[100] opacity-100" : "z-[-1] opacity-50"
             }`}
@@ -173,9 +173,7 @@ document.querySelector('body').classList.remove('resultPage')
             Calculate
           </NavLink>
         </div>
-    
-    </Container>
-    
+      </Container>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import Layout from "../landingPage/layout"
+import Layout from "../LandingPage/Layout"
 
 function HomePage() {
     return (
