@@ -1,10 +1,10 @@
-import LayoutMsn from "../LandingPage/LayoutMsn.jsx"
+import LayoutMsn from "../PromotPage/LayoutMsn.jsx";
 function HomePage() {
-    return (
-        <div>
-           <LayoutMsn/>
-        </div>
-    )
+  return (
+    <div>
+      <LayoutMsn />
+    </div>
+  );
 }
 
-export default HomePage
+export default HomePage;
