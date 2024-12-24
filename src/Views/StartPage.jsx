@@ -6,7 +6,7 @@ import BasicButtons from "../UI-Components/BasicButtons";
 import { UseBodyContext } from "../Context/BodyContext";
 import { NavLink, useNavigate,Navigate  } from "react-router-dom";
 import Container from "../UI-Components/Container";
-import Header from '../landing-page/Header'
+import Header from '../landingPage/Header'
 
 const initialState = {
   gender: "",
