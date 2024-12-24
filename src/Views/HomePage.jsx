@@ -1,5 +1,4 @@
-import LayoutMsn from "../LandingPage/LayoutMsn"
-
+import LayoutMsn from "../LandingPage/LayoutMsn.jsx"
 function HomePage() {
     return (
         <div>
