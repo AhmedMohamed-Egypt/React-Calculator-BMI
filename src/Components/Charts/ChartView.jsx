@@ -11,21 +11,21 @@ function ChartView({proteinVal,fatVal,carbVal}) {
 
   const sizing = {
     margin: { right: 5 },
-    width: 200,
-    height: 200,
+    width: 350,
+    height: 350,
     legend: { hidden: true },
   };
   const TOTAL = data.map((item) => item.value).reduce((a, b) => a + b, 0);
 
   const getArcLabel = (params) => {
     const percent = params.value;
-    return `${percent}%`;
+    return ` ${params.label} ${percent}%`;
   };
   return (
     <PieChart 
       series={[
         {
-          outerRadius: 80,
+          outerRadius: 100,
           data,
           arcLabel: getArcLabel,
         },
