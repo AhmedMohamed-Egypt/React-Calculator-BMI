@@ -23,6 +23,14 @@
     height: 100%;
     max-width: 454px;
     margin-left: 200px;
+    @media only screen and (max-width:1200px){
+        max-width: 50%;
+        margin: auto;
+    }
+    @media only screen and (max-width:992px){
+        max-width: 80%;
+        margin: auto;
+    }
     >span:nth-child(1){
         margin-left: auto;
     }

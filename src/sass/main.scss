@@ -7,4 +7,41 @@
 @import './_Trainee.scss';
 @import './_rightTime.scss';
 @import './_EveyThing.scss';
-@import './_footer.scss'
+@import './_footer.scss';
+
+h2.text-5xl{
+    @media only screen and (max-width: 1200px) {
+     font-size: 28px;
+    }
+    @media only screen and (max-width: 992px) {
+        font-size: 24px;
+       }
+       @media only screen and (max-width: 600px) {
+        font-size: 22px;
+       }
+}
+
+h2.text-4xl{
+    @media only screen and (max-width: 1200px) {
+        font-size: 26px;
+       }
+       @media only screen and (max-width: 992px) {
+           font-size: 22px;
+          }
+          @media only screen and (max-width: 600px) {
+           font-size: 20px;
+          }
+}
+a.text-xl{
+    @media only screen and (max-width: 600px) {
+        font-size: 17px;
+       }
+       @media only screen and (max-width: 450px) {
+        font-size: 16px;
+       }
+}
+.headerComponent__logo img{
+    @media only screen and (max-width: 450px) {
+        width: 120px;
+       }
+}

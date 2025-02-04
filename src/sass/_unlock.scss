@@ -1,11 +1,30 @@
 .unlock{
     padding: 100px 0;
     &__images{
+        @media only screen and (max-width:1200px){
+            width: 100%;
+        }
         img{
             width: 300px;
             &:nth-child(2){
                 transform: translateY(100px);
             }
+            @media only screen and (max-width:992px){
+        width: 50%;
+        margin: 10px auto;
+            }
         }
+    }
+    .container>div.flex{
+        @media only screen and (max-width:1200px){
+              flex-direction: column;
+        }
+    }
+    .container>div.flex>div.flex-col.items-start{
+        @media only screen and (max-width:1200px){
+            flex-direction: column;
+            margin-top: 150px;
+            width: 80%;
+      }
     }
 }

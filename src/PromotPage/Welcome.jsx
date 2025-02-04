@@ -2,7 +2,7 @@ function Welcome() {
     return (
         <div className="welcome-div py-[70px]">
             <div className="container mx-auto">
-       <div className="flex items-center">
+       <div className="flex items-center justify-center">
        <div className="w-[50%]">
                 <h1 className=" text-4xl	font-bold font-anton">Welcome to Mindsets N Reps </h1>
                 <p className="max-w-[500px] my-[50px]">

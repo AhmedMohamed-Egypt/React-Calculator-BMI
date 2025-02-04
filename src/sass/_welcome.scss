@@ -3,10 +3,32 @@
     min-height: 600px;
     background-image: url('https://static.zohocdn.com/sites/stock-images/images/zpstock-image-1314.webp');
     padding: 45px 0;
+    @media only screen and (max-width:768px){
+    max-width: 90%;
+    margin: auto;
+    }
     &__img{
+        @media only screen and (max-width: 1200px){
+             width: 40%;
+        }
         img{
             width: 80%;
             margin-left: auto;
+            @media only screen and (max-width: 1200px){
+                width: 100%;
+           }
         }
+    }
+    .container{
+        @media only screen and (max-width: 1200px){
+            >div.flex{
+                >div{
+                    width: 100%;
+                    margin-bottom: 50px;
+                }
+              flex-direction: column;
+            }
+        }
+        
     }
 }
