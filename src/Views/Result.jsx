@@ -28,7 +28,7 @@ function Result() {
       wtUnit={storedItem.weightUnit}
       gndr={storedItem.gender}
     />:'not found'}
-      <div className="max-w-[250px] dataChart">
+      <div className="dataChart">
    {  <ChartView proteinVal={percentProtien} fatVal={percentFat} carbVal={percentCarbs}/> }
       </div>
       <NavLink to={"/"} className={'absolute left-[15px] top-[20px] px-[20px] py-[5px] rounded-[8px] bg-black text-white'}>Back</NavLink>
