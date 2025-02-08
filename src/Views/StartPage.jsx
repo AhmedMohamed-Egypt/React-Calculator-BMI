@@ -81,7 +81,7 @@ function StartPage() {
     navigate("/result");
   };
   document.querySelector("body").classList.remove("resetBk");
-  document.querySelector("body").classList.remove("resultPage");
+  document.querySelector("body").classList.remove("resultPageBody");
   return (
     <>
       <div className="container mx-auto">

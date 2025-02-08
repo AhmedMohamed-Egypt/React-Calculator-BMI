@@ -11,8 +11,8 @@ function ChartView({proteinVal,fatVal,carbVal}) {
 
   const sizing = {
     margin: { right: 5 },
-    width: 350,
-    height: 350,
+    width: 320,
+    height: 320,
     legend: { hidden: true },
   };
   const TOTAL = data.map((item) => item.value).reduce((a, b) => a + b, 0);
