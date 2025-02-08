@@ -289,7 +289,7 @@ button.calcQuantity{
         height: 100%;
         .dataMass{
             max-width: 100%;
-            padding-top: 0px;
+            padding-top: 50px;
 
         }
         .divide-y{
@@ -300,6 +300,7 @@ button.calcQuantity{
         .dataChart ~a{
             left: auto;
             right: 15px;
+            top: 25px;
         }
         .dataChart ~div{
             margin-top: 0px;
